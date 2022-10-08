@@ -18,7 +18,6 @@
 .env.test.local
 .env.production.local
 
-<<<<<<< HEAD
 # Output of 'npm pack'
 *.tgz
 
@@ -79,8 +78,6 @@ dist
 .env.test.local
 .env.production.local
 
-=======
->>>>>>> 26f78b3a3eca11a93d3e6a8f951885aafe56c12f
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

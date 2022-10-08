@@ -1,0 +1,48 @@
+.bs-featured-heading{
+    font-size: 5.5rem;
+    color: #6D1009;
+}
+
+.bs-featured-sub-heading{
+    color: #6D1009;
+    font-weight: 600;
+}
+
+.bs-bg-yellow{
+    background: #efcb3a;
+    padding: 3rem;
+}
+
+.bs-featured-para-1{
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.bs-featured-circle-bg{
+    display: inline-block;
+    background: #EAE2B7;
+    padding: 1.5rem;
+    border-radius: 100px !important;
+    margin: 15px;
+}
+
+.bs-featured-img{
+    height: 8rem;
+    width: 8rem;
+}
+
+.bs-featured-btn-dw{
+    background: #EAE2B7;
+    color: black;
+    padding: 20px 40px;
+    font-size: 1.7rem !important;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+.bs-featured-btn-dw:hover{
+    background: #EAE2B7;
+    color: black;
+}

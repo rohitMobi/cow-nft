@@ -1,20 +1,20 @@
-.bs-featured-heading{
+.bs-about-heading{
     font-size: 5.5rem;
     color: #6D1009;
 }
 
-.bs-featured-sub-heading{
+.bs-about-sub-heading{
     color: #6D1009;
     font-weight: 600;
 }
 
-.bs-featured-para-1{
+.bs-about-para-1{
     color: black;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.18rem;
+    line-height: normal
 }
 
-.bs-featured-circle-bg{
+.bs-about-circle-bg{
     display: inline-block;
     background: #EAE2B7;
     padding: 1.5rem;
@@ -22,12 +22,12 @@
     margin: 15px;
 }
 
-.bs-featured-img{
-    height: 8rem;
-    width: 8rem;
+.bs-about-img{
+    height: 35rem;
+    width: 100%;
 }
 
-.bs-featured-btn-dw{
+.bs-about-btn-dw{
     background: #EAE2B7;
     color: black;
     padding: 20px 40px;
@@ -37,7 +37,7 @@
     text-transform: uppercase;
 }
 
-.bs-featured-btn-dw:hover{
+.bs-about-btn-dw:hover{
     background: #EAE2B7;
     color: black;
 }

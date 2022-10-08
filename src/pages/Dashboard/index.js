@@ -2,6 +2,7 @@ import HeaderComp from "../../Layouts/Header";
 import SideUIDesign from "../../Assets/Images/SideUIDesign.png";
 import "./style.css";
 import FeaturedComp from "../Featured";
+import AboutComp from "../About";
 
 function DashboardComp() {
     return (
@@ -45,7 +46,12 @@ function DashboardComp() {
                     </div>
                 </div>    
             </div>
-            <FeaturedComp />
+
+            <div class="bs-bg-yellow">
+                <FeaturedComp />
+                <hr class="accessory" />
+                <AboutComp />
+            </div>
         </>
     )
 }

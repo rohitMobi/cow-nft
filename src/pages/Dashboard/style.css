@@ -1,5 +1,53 @@
-.Container-BG {
-    background: "#FFF8D4";
-    height: "90vh";
-    width: "100%";
+.bs-main-section{
+    height: 100vh;
+    background-size: cover;
+    position: relative !important;
+}
+
+.bs-left-img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+
+.bs-right-img{
+    transform: scaleX(-1) !important;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0;
+}
+
+.bs-dashboard-container{
+    position: absolute;
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.bs-dashboard-heading{
+    font-size: 6rem;
+    color: #003049;
+}
+
+.bs-dashboard-sub-heading{
+    color: #6D1009;
+    font-weight: 600;
+}
+
+.bs-btn-orange{
+    text-align: center;
+    background: #F77F00 !important;
+    font-weight: bold !important;
+    font-family: "Open Sans" !important;
+    font-size: 1.3rem;
+}
+
+.bs-btn-yellow{
+    text-align: center;
+    background: #FCBF49 !important;
+    font-weight: bold !important;
+    font-family: "Open Sans" !important;
+    font-size: 1.3rem;
 }

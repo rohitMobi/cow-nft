@@ -1,34 +1,49 @@
+import HeaderComp from "../../Layouts/Header";
+import bsdashboardbg from "../../Assets/Images/bs-dashboard-bg.png";
+import SideUIDesign from "../../Assets/Images/SideUIDesign.png";
 import "./style.css";
 
 function DashboardComp() {
     return (
         <>
-            <div>
-                <nav class="navbar navbar-expand-lg bg-light">
-                    <div class="container-fluid">
-                        <div class="collapse navbar-collapse" id="navbarText">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Eco-System</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Roadmap</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Whitepaper</a>
-                                </li>
-                            </ul>
-                            <span class="navbar-text">
-                                <button class="btn me-2" type="button">Free $10</button>
-                                <button class="btn me-2" type="button">BUY</button>
-                                <button class="btn me-2" type="button">CLAIM</button>
-                            </span>
+            <HeaderComp />
+            <div className="bs-main-section">
+                <img src={SideUIDesign} className="bs-left-img"/>
+                <img src={SideUIDesign} className="bs-right-img"/>
+                <div className="bs-dashboard-container">
+                    <div class="container text-center mt-5">
+                        <div class="row mb-5">
+                            <div class="col">
+                                <h1 className="bs-font-SimranITC bs-dashboard-heading">COW NFT</h1>
+                                <h4 className="bs-font-OpenSans bs-dashboard-sub-heading"><i>BuyTamadoge and OKX and OKX DEX now !!</i></h4>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col">
+                                <button className="btn w-100 bs-btn-orange"><i>Buy on OKX</i></button>
+                            </div>
+                            <div class="col">
+                                <button className="btn w-100 bs-btn-orange"><i>Buy on OKX DEX</i></button>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col">
+                                <button className="btn w-100 bs-btn-yellow"><i>Claim</i></button>
+                            </div>
+                            <div class="col">
+                                <button className="btn w-100 bs-btn-yellow"><i>How to Claim</i></button>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col">
+                                <button className="btn w-100 bs-btn-yellow"><i>How to buy on OKX</i></button>
+                            </div>
+                            <div class="col">
+                                <button className="btn w-100 bs-btn-yellow"><i>How to buy on DEX</i></button>
+                            </div>
                         </div>
                     </div>
-                </nav>
+                </div>    
             </div>
         </>
     )

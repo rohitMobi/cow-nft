@@ -12,3 +12,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'SimranITC';
+  src: url("./Assets/Fonts/SimranITC.otf") format("opentype");
+}
+
+.bs-font-SimranITC{
+  font-family: 'SimranITC' !important;
+}
+
+.bs-font-OpenSans{
+  font-family: 'Open Sans' !important;
+}

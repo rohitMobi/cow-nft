@@ -7,11 +7,11 @@ function AboutComp() {
             <div class="container text-center mt-5" style={{ padding: "10rem 0" }}>
                 <div class="row mb-5">
                     <div class="col">
-                        <h1 className="bs-font-SimranITC bs-about-heading">About Us</h1>
+                        <h1 className="bs-font-SimranITC display-1 bs-about-heading">About Us</h1>
                     </div>
                 </div>
                 <div class="row mb-5">
-                    <div class="col text-start">
+                    <div class="col-md-6 col-sm-12 text-start">
                         <h1 class="mb-5">
                             The newest Cow on the block
                         </h1>
@@ -25,7 +25,7 @@ function AboutComp() {
                             Tamadoge isn’t just the future of the Doge ecosystem, it’s the future of Play-to-Earn
                         </h6>
                     </div>
-                    <div class="col text-center">
+                    <div class="col-md-6 col-sm-12 text-center">
                         <div>
                             <img class="bs-about-img" src={AboutUsSide} alt="" />
                         </div>

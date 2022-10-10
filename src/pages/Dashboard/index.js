@@ -48,9 +48,11 @@ function DashboardComp() {
             </div>
 
             <div class="bs-bg-yellow">
-                <FeaturedComp />
-                <hr class="accessory" />
-                <AboutComp />
+                <div class="container">
+                    <FeaturedComp />
+                    <hr class="accessory" />
+                    <AboutComp />
+                </div>    
             </div>
         </>
     )

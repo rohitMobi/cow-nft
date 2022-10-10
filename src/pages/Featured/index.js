@@ -8,7 +8,7 @@ function FeaturedComp() {
             <div class="container text-center mt-5 pb-5">
                 <div class="row mb-5">
                     <div class="col">
-                        <h1 className="bs-font-SimranITC bs-featured-heading">Featured In</h1>
+                        <h1 className="bs-font-SimranITC display-1 bs-featured-heading">Featured In</h1>
                     </div>
                 </div>
                 <div class="row mb-5">

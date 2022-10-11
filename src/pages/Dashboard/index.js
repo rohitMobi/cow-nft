@@ -3,14 +3,15 @@ import SideUIDesign from "../../Assets/Images/SideUIDesign.png";
 import "./style.css";
 import FeaturedComp from "../Featured";
 import AboutComp from "../About";
+import FooterComp from "../../Layouts/Footer";
 
 function DashboardComp() {
     return (
         <>
             <HeaderComp />
             <div className="bs-main-section">
-                <img src={SideUIDesign} className="bs-left-img"/>
-                <img src={SideUIDesign} className="bs-right-img"/>
+                <img src={SideUIDesign} className="bs-left-img" alt="" />
+                <img src={SideUIDesign} className="bs-right-img" alt="" />
                 <div className="bs-dashboard-container">
                     <div class="container text-center mt-5">
                         <div class="row mb-5">
@@ -54,6 +55,7 @@ function DashboardComp() {
                     <AboutComp />
                 </div>    
             </div>
+            <FooterComp />
         </>
     )
 }

@@ -1,0 +1,19 @@
+.bs-footer-bg{
+    background: #FFF8D4;
+}
+
+.bs-footer-section{
+    background: url('../../Assets/Images/FooterBg.png');
+    background-size: cover;
+}
+
+.bs-footer-section h5{
+    /* color: #420905; */
+    font-size: xx-large;
+}
+
+.bs-footer-section li .nav-link{
+    color: #420905 !important;
+    font-size: large;
+    font-weight: 600;
+}

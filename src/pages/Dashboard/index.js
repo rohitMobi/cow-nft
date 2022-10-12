@@ -1,9 +1,11 @@
 import HeaderComp from "../../Layouts/Header";
 import SideUIDesign from "../../Assets/Images/SideUIDesign.png";
 import "./style.css";
-import FeaturedComp from "../Featured";
-import AboutComp from "../About";
+import FeaturedComp from "../../Components/Featured";
+import AboutComp from "../../Components/About";
 import FooterComp from "../../Layouts/Footer";
+import PartnerComp from "../../Components/Partner";
+import CollectionComp from "../../Components/Collection";
 
 function DashboardComp() {
     return (
@@ -53,6 +55,10 @@ function DashboardComp() {
                     <FeaturedComp />
                     <hr class="accessory" />
                     <AboutComp />
+                    <hr class="accessory" />
+                    <PartnerComp />
+                    <hr class="accessory" />
+                    <CollectionComp />
                 </div>    
             </div>
             <FooterComp />

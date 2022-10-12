@@ -1,0 +1,26 @@
+.bs-collection-circle-bg{
+    display: inline-block;
+    background: #EAE2B7;
+    padding: 1rem;
+    border-radius: 100px !important;
+    margin: 15px;
+}
+
+.bs-collection-img{
+    height: 4rem;
+    width: 4rem;
+}
+
+.bs-collection-card{
+    border-radius: 50px !important;
+}
+
+.bs-collection-card-img-top{
+    height: 17rem;
+    width: 100%;
+}
+
+.bs-collection-card-body{
+    background: #003049;
+    color: white
+}

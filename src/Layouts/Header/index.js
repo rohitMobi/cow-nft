@@ -1,30 +1,34 @@
 import "./style.css";
+import { Link } from "react-router-dom";
 
 function HeaderComp() {
     return (
         <>
             <div>
-                <nav class="bs-navbar navbar navbar-expand-lg bg-light">
-                    <div class="container-fluid">
-                        <div class="collapse navbar-collapse" id="navbarText">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="bs-nav-link nav-link active" href="#">About</a>
+                <nav className="bs-navbar navbar navbar-expand-lg bg-light">
+                    <div className="container-fluid">
+                        <div className="collapse navbar-collapse" id="navbarText">
+                            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li className="nav-item">
+                                    <Link className="bs-nav-link nav-link" to="/">Dashboard</Link>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="bs-nav-link nav-link" href="#">Eco-System</a>
+                                <li className="nav-item">
+                                    <a className="bs-nav-link nav-link" href="#">About</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="bs-nav-link nav-link" href="#">Roadmap</a>
+                                <li className="nav-item">
+                                    <a className="bs-nav-link nav-link" href="#">Eco-System</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="bs-nav-link nav-link" href="#">Whitepaper</a>
+                                <li className="nav-item">
+                                    <a className="bs-nav-link nav-link" href="#">Roadmap</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="bs-nav-link nav-link" href="#">Whitepaper</a>
                                 </li>
                             </ul>
-                            <span class="navbar-text">
-                                <button class="btn me-2 bs-btn-orange" type="button">Free $10</button>
-                                <button class="btn me-2 bs-btn-orange" type="button">BUY</button>
-                                <button class="btn me-2 bs-btn-orange" type="button">CLAIM</button>
+                            <span className="navbar-text">
+                                <button className="btn me-2 bs-btn-orange" type="button">Free $10</button>
+                                <button className="btn me-2 bs-btn-orange" type="button">BUY</button>
+                                <Link to="/claim"><button className="btn me-2 bs-btn-orange" type="button">CLAIM</button></Link>
                             </span>
                         </div>
                     </div>

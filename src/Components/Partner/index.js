@@ -11,18 +11,18 @@ function PartnerComp() {
 
     return (
         <>
-            <div class="container text-center mt-5">
-                <div class="row mb-5">
-                    <div class="col">
+            <div className="container text-center mt-5">
+                <div className="row mb-5">
+                    <div className="col">
                         <h1 className="bs-font-SimranITC display-1 bs-featured-heading">Partner With</h1>
                     </div>
                 </div>
-                <div class="row mb-5">
+                <div className="row mb-5">
                     {
                         imgList.map((item) => {
                             return(
-                                <div class="col-lg-3">
-                                    <img src={item.img} alt="" style={{ width: '100%' }} class="my-5" />
+                                <div className="col-lg-3">
+                                    <img src={item.img} alt="" style={{ width: '100%' }} className="my-5" />
                                 </div>
                             )
                         })

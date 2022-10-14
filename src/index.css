@@ -1,3 +1,6 @@
+/* @import "compass/css3"; */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300,800);
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -24,4 +27,8 @@ code {
 
 .bs-font-OpenSans{
   font-family: 'Open Sans' !important;
+}
+
+.text-marum-color{
+  color: #6D1009 !important;
 }

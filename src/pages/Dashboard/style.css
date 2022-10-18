@@ -19,6 +19,21 @@
     z-index: 0;
 }
 
+.bs-bottom-left-img{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.bs-bottom-right-img{
+    transform: scaleX(-1) !important;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
 .bs-dashboard-container{
     position: absolute;
     width: 100%;

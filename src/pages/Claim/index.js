@@ -1,17 +1,27 @@
 import CreateTokenSectionComp from "../../Components/CreateTokenSection";
 import HeaderComp from "../../Layouts/Header";
 import SideUIDesign from "../../Assets/Images/SideUIDesign.png";
+import CircleImg from "../../Assets/Images/Circle.jpg";
+import BottomDesignImg from "../../Assets/Images/BottomDesign.jpg";
 import CowLogin from "../../Assets/Images/CowLogin.png";
 import NFTInsta from "../../Assets/Images/NFT-Insta.png";
 import FooterComp from "../../Layouts/Footer";
 import { toast } from 'react-toastify';
 import "./style.scss";
 import { useEffect, useState } from "react";
+import Button from '@mui/material/Button';
 
 function ClaimComp() {
 
+    { document.title = "COW NFT | Claim" }
+
     const [userWalletAddress, setUserWalletAddress] = useState("");
     const [slot, setSlot] = useState(false);
+    const [amount, setAmount] = useState(0);
+
+    const claimToken = () => {
+        console.log("Amount: ", amount);
+    }
 
     const connectWallet = () => {
         if (window.ethereum) {
@@ -35,8 +45,6 @@ function ClaimComp() {
         }
     }, []);
 
-    { document.title = "COW NFT | Claim" }
-
     return (
         <>
             <HeaderComp setUserWalletAddress={setUserWalletAddress} userWalletAddress={userWalletAddress} />
@@ -45,7 +53,7 @@ function ClaimComp() {
                 <img src={SideUIDesign} className="bs-claim-right-img" alt="" />
                 <div className="bs-claim-dashboard-container mb-5">
                     <div className="container text-center mt-5 mb-5">
-                        <div className="row mb-5">
+                        <div className="row">
                             <div className="col">
                                 <h1 className="bs-font-SimranITC display-1 bs-dashboard-heading">Claim your Cow Token now !</h1>
                             </div>
@@ -58,41 +66,32 @@ function ClaimComp() {
                             </div>
                         </div>
                         <div className="row mb-5">
-                            <div className="col">
+                            <div className="col-lg-12">
                                 {
                                     userWalletAddress === "" ?
                                         <button onClick={() => connectWallet()} className="btn px-5 bs-btn-orange"><i>Connect Wallet</i></button>
                                         :
                                         <>
-                                            <div id="form-wrapper">
-                                                <form>
-                                                    <h1 id="form-title" className="bs-font-SimranITC">Select Slot</h1>
-                                                    <div id="debt-amount-slider">
-                                                        <input type="radio" name="debt-amount" id="1" value="1" required onClick={() => setSlot(true)} />
-                                                        <label className="bs-font-SimranITC" for="1" data-debt-amount="40"></label>
-                                                        <input type="radio" name="debt-amount" id="2" value="2" required onClick={() => setSlot(true)} />
-                                                        <label className="bs-font-SimranITC" for="2" data-debt-amount="25"></label>
-                                                        <input type="radio" name="debt-amount" id="3" value="3" required onClick={() => setSlot(true)} />
-                                                        <label className="bs-font-SimranITC" for="3" data-debt-amount="15"></label>
-                                                        <input type="radio" name="debt-amount" id="4" value="4" required onClick={() => setSlot(true)} />
-                                                        <label className="bs-font-SimranITC" for="4" data-debt-amount="10"></label>
-                                                        <input type="radio" name="debt-amount" id="5" value="5" required onClick={() => setSlot(true)} />
-                                                        <label className="bs-font-SimranITC" for="5" data-debt-amount="10"></label>
-                                                        <div id="debt-amount-pos"></div>
-                                                    </div>
+                                            <div className="row">
+                                                <div className="col-lg-12">
+                                                    <h1 className="bs-font-SimranITC">Select Slot</h1>
+                                                </div>
+                                                <div className="col-lg-12">
                                                     <div>
-                                                        <div class="text-input">
-                                                            {
-                                                                slot === true ?
-                                                                    <input type="number" id="input1" placeholder="Enter Amount" />
-                                                                    :
-                                                                    <input type="number" id="input1" placeholder="Enter Amount" disabled />
-                                                            }
-                                                            <label for="input1">$</label>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div className="col-lg-4 offset-lg-4 col-sm-12">
+                                                    <div>
+                                                        <div className="text-input">
+                                                            <input type="number" id="input1" placeholder="Enter Amount" />
+                                                            <label htmlFor="input1">$</label>
+                                                        </div>
+                                                        <div>
+                                                            <Button variant="outlined" className="claimBtn bs-font-OpenSans" onClick={() => claimToken()}>Claim Token</Button>
                                                         </div>
                                                     </div>
-                                                </form>
-                                                <button type="submit">Claim Token</button>
+                                                </div>
                                             </div>
                                         </>
                                 }

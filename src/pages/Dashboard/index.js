@@ -1,11 +1,20 @@
 import "./style.css";
 import HeaderComp from "../../Layouts/Header";
 import SideUIDesign from "../../Assets/Images/SideUIDesign.png";
+import CowBottomImg from "../../Assets/Images/CowBottomImg.png";
 import FeaturedComp from "../../Components/Featured";
 import AboutComp from "../../Components/About";
 import FooterComp from "../../Layouts/Footer";
 import PartnerComp from "../../Components/Partner";
 import CollectionComp from "../../Components/Collection";
+
+import YoutubeLogo from "../../Assets/Images/SocialMedia/youtube.png";
+import TelegramLogo from "../../Assets/Images/SocialMedia/telegram.png";
+import TwitterLogo from "../../Assets/Images/SocialMedia/twitter.png";
+import DiscordLogo from "../../Assets/Images/SocialMedia/discord.png";
+import InstagramLogo from "../../Assets/Images/SocialMedia/instagram.png";
+
+import { Link } from "react-router-dom";
 
 function DashboardComp() {
 
@@ -17,6 +26,8 @@ function DashboardComp() {
             <div className="bs-main-section">
                 <img src={SideUIDesign} className="bs-left-img" alt="" />
                 <img src={SideUIDesign} className="bs-right-img" alt="" />
+                <img src={CowBottomImg} className="bs-bottom-left-img" alt="" />
+                <img src={CowBottomImg} className="bs-bottom-right-img" alt="" />
                 <div className="bs-dashboard-container">
                     <div className="container text-center mt-5">
                         <div className="row mb-5">
@@ -47,6 +58,15 @@ function DashboardComp() {
                             </div>
                             <div className="col">
                                 <button className="btn w-100 bs-btn-yellow"><i>How to buy on DEX</i></button>
+                            </div>
+                        </div>
+                        <div className="row mb-5">
+                            <div className="col text-center mt-5">
+                                <a rel="noreferrer" href="https://www.instagram.com/" target="_blank"><img src={InstagramLogo} height="50px" style={{ marginLeft: "15px" }} alt="" /></a>
+                                <a rel="noreferrer" href="https://discord.com/" target="_blank"><img src={DiscordLogo} height="50px" style={{ marginLeft: "15px" }} alt="" /></a>
+                                <a rel="noreferrer" href="https://twitter.com/" target="_blank"><img src={TwitterLogo} height="50px" style={{ marginLeft: "15px" }} alt="" /></a>
+                                <a rel="noreferrer" href="https://telegram.org/" target="_blank"><img src={TelegramLogo} height="50px" style={{ marginLeft: "15px" }} alt="" /></a>
+                                <a rel="noreferrer" href="https://www.youtube.com/" target="_blank"><img src={YoutubeLogo} height="50px" style={{ marginLeft: "15px" }} alt="" /></a>
                             </div>
                         </div>
                     </div>

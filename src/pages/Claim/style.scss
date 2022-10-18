@@ -19,6 +19,14 @@
     z-index: 0;
 }
 
+.bs-claim-bottom-img{
+    position: absolute;
+    z-index: 0;
+    bottom: 0%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+}
+
 .bs-claim-dashboard-container{
     position: absolute;
     width: 100%;
@@ -302,6 +310,42 @@ form {
 	}
 }
 
+.textAlignCenterVerticalHorizontical{
+	position: absolute;
+    top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.claimBtn {
+    display: block;
+    position: relative;
+    margin: 20px auto 0 !important;
+    padding: 10px 20px !important;
+    // appearance: none;
+    transition: all 0.15s ease-in-out;
+    font-family: inherit;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    border: 2px solid #6D1009 !important;
+    color: #6D1009 !important;
+    border-radius: 8px !important;
+    outline: 0 !important;
+    // cursor: pointer;
+    text-transform: capitalize !important;
+    &:hover {
+        // transform: scale(1.1);
+        background: #FCBF49 !important;
+        color: #6D1009;
+        border-color: #6D1009;
+    }
+    &:focus {
+        background: #FCBF49;
+        border-color: #FCBF49;
+        color: #6D1009;
+        border-color: #6D1009;
+    }
+}
 
 .text-input{
   

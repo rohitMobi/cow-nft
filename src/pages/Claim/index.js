@@ -1,8 +1,6 @@
-import CreateTokenSectionComp from "../../Components/CreateTokenSection";
 import HeaderComp from "../../Layouts/Header";
 import SideUIDesign from "../../Assets/Images/SideUIDesign.png";
-import CircleImg from "../../Assets/Images/Circle.jpg";
-import BottomDesignImg from "../../Assets/Images/BottomDesign.jpg";
+import CowBottomImg from "../../Assets/Images/CowBottomImg.png";
 import CowLogin from "../../Assets/Images/CowLogin.png";
 import NFTInsta from "../../Assets/Images/NFT-Insta.png";
 import FooterComp from "../../Layouts/Footer";
@@ -17,6 +15,9 @@ function ClaimComp() {
 
     const [userWalletAddress, setUserWalletAddress] = useState("");
     const [slot, setSlot] = useState(false);
+    const [slot1, setSlot1] = useState(false);
+    const [slot2, setSlot2] = useState(false);
+    const [slot3, setSlot3] = useState(false);
     const [amount, setAmount] = useState(0);
 
     const claimToken = () => {
@@ -37,31 +38,61 @@ function ClaimComp() {
         }
     }
 
+    const checkSlotAvailable = () => {
+        var today = new Date();
+        const long = today.getTime();
+        var slot1Date = new Date('2022-10-20');
+        const long1 = slot1Date.getTime();
+        var slot2Date = new Date('2022-10-25');
+        const long2 = slot2Date.getTime();
+        var slot3Date = new Date('2022-10-27');
+        const long3 = slot3Date.getTime();
+
+        const debtAmount = document.getElementsByName("debt-amount");
+
+        if(long1 <= long && long2 > long){
+            setSlot1(true);
+            setSlot2(false);
+            setSlot3(false);
+        }else if(long2 <= long && long3 > long){
+            setSlot1(false);
+            setSlot2(true);
+            setSlot3(false);
+        }else if(long3 <= long){
+            setSlot1(false);
+            setSlot2(false);
+            setSlot3(true);
+        }
+    }
+
     useEffect(() => {
         if (localStorage.getItem("cn-user-wallet-address") != null) {
             setUserWalletAddress(localStorage.getItem("cn-user-wallet-address"));
         } else {
             setUserWalletAddress("")
         }
+        checkSlotAvailable();
     }, []);
 
     return (
         <>
             <HeaderComp setUserWalletAddress={setUserWalletAddress} userWalletAddress={userWalletAddress} />
-            <div className="bs-claim-main-section py-5 mb-5">
+            <div className="bs-claim-main-section">
                 <img src={SideUIDesign} className="bs-claim-left-img" alt="" />
                 <img src={SideUIDesign} className="bs-claim-right-img" alt="" />
+                <img src={CowBottomImg} className="bs-claim-bottom-left-img" alt="" />
+                <img src={CowBottomImg} className="bs-claim-bottom-right-img" alt="" />
                 <div className="bs-claim-dashboard-container mb-5">
                     <div className="container text-center mt-5 mb-5">
                         <div className="row">
                             <div className="col">
-                                <h1 className="bs-font-SimranITC display-1 bs-dashboard-heading">Claim your Cow Token now !</h1>
+                                <h1 className="bs-font-SimranITC display-1 bs-dashboard-heading">Private Sale</h1>
                             </div>
                         </div>
                         <div className="row mb-5">
                             <div className="col">
                                 <h4 className="bs-font-OpenSans bs-dashboard-sub-heading p-5">
-                                    Tamadoge is the ultimate memecoin Play-to-Earn platform, and the pre-sale has now sold out. You can use this page to claim your purchased Tamadoge tokens. Hit the connect wallet button below, and you’ll be able to see your claimable token balance. Once you’ve connected your wallet, hit claim and authorise the transaction. You can use the token information to track your TAMA in your wallet, or use the button below.
+                                    COWNFT is the ultimate coin Play-to-Earn platform
                                 </h4>
                             </div>
                         </div>
@@ -73,12 +104,69 @@ function ClaimComp() {
                                         :
                                         <>
                                             <div className="row">
-                                                <div className="col-lg-12">
-                                                    <h1 className="bs-font-SimranITC">Select Slot</h1>
+                                                
+                                                <div className="col-lg-6 offset-lg-3 mb-5">
+                                                    <table class="table bs-font-OpenSans">
+                                                        <thead class="thead-dark">
+                                                            <tr>
+                                                                <th scope="col"></th>
+                                                                <th scope="col" className="thtdActive">Total Token</th>
+                                                                <th scope="col" className="thtdActive">Price</th>
+                                                                <th scope="col" className="thtdActive">From Date</th>
+                                                                <th scope="col" className="thtdActive">To Date</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row" className="thtdActive">Slot 1</th>
+                                                                <td>25M</td>
+                                                                <td>USDC 0.01</td>
+                                                                <td>20 OCT 2022</td>
+                                                                <td>24 OCT 2022</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row" className="thtdActive">Slot 2</th>
+                                                                <td>50M</td>
+                                                                <td>USDC 0.02</td>
+                                                                <td>25 OCT 2022</td>
+                                                                <td>27 OCT 2022</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row" className="thtdActive">Slot 3</th>
+                                                                <td>50M</td>
+                                                                <td>USDC 0.03</td>
+                                                                <td>28 OCT 2022</td>
+                                                                <td>31 OCT 2022</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
                                                 </div>
                                                 <div className="col-lg-12">
-                                                    <div>
-                                                        
+                                                    <div id="form-wrapper">
+                                                        <form>
+                                                            <div id="debt-amount-slider">
+                                                                <input type="radio" name="debt-amount" id="1" value="1" disabled />
+                                                                <label className="bs-font-SimranITC" for="1" data-debt-amount=""></label>
+                                                                <input type="radio" name="debt-amount" id="2" value="2" disabled checked={slot1} />
+                                                                <label className="bs-font-SimranITC" for="2" data-debt-amount="Slot 1"></label>
+                                                                <input type="radio" name="debt-amount" id="3" value="3" disabled checked={slot2} />
+                                                                <label className="bs-font-SimranITC" for="3" data-debt-amount="Slot 2"></label>
+                                                                <input type="radio" name="debt-amount" id="4" value="4" disabled checked={slot3} />
+                                                                <label className="bs-font-SimranITC" for="4" data-debt-amount="Slot 3"></label>
+                                                                <input type="radio" name="debt-amount" id="5" value="5" disabled />
+                                                                <label className="bs-font-SimranITC" for="5" data-debt-amount=""></label>
+                                                                <div id="debt-amount-pos"></div>
+                                                            </div>
+                                                            {/* <div id="debt-amount-slider">
+                                                                <input type="radio" name="debt-amount" id="slotRadio1" value="1" required />
+                                                                <label className="bs-font-SimranITC" for="1" data-debt-amount="Slot 1"></label>
+                                                                <input type="radio" name="debt-amount" id="slotRadio2" value="2" required />
+                                                                <label className="bs-font-SimranITC" for="2" data-debt-amount="Slot 2"></label>
+                                                                <input type="radio" name="debt-amount" id="slotRadio3" value="3" required />
+                                                                <label className="bs-font-SimranITC" for="3" data-debt-amount="Slot 3"></label>
+                                                                <div id="debt-amount-pos"></div>
+                                                            </div> */}
+                                                        </form>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-4 offset-lg-4 col-sm-12">

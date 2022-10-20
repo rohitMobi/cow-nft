@@ -1,109 +1,129 @@
-.bs-claim-main-section{
-    min-height: 100vh;
-    background-size: cover;
-    position: relative !important;
+table {
+	// border:  !important;
+	border-color: transparent !important;
+	border-collapse: separate;
+	border-spacing: 5px;
 }
 
-.bs-claim-left-img{
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 0;
+.thtdActive {
+	background: rgba($color: #6D1009, $alpha: 0.8) !important;
+	color: white;
+	border-radius: 7px;
 }
 
-.bs-claim-right-img{
-    transform: scaleX(-1) !important;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 0;
+.bs-claim-main-section {
+	min-height: 110vh;
+	background-size: cover;
+	position: relative !important;
 }
 
-.bs-claim-bottom-img{
-    position: absolute;
-    z-index: 0;
-    bottom: 0%;
-	left: 50%;
-	transform: translate(-50%, 0%);
+.bs-claim-left-img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 0;
 }
 
-.bs-claim-dashboard-container{
-    position: absolute;
-    width: 100%;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+.bs-claim-right-img {
+	transform: scaleX(-1) !important;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 0;
 }
 
-.bs-claim-dashboard-heading{
-    color: #003049;
+.bs-claim-bottom-left-img {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 0;
 }
 
-.bs-claim-dashboard-sub-heading{
-    color: #6D1009;
-    font-weight: 600;
+.bs-claim-bottom-right-img {
+	transform: scaleX(-1) !important;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
 }
 
-.bs-claim-btn-orange{
-    text-align: center;
-    background: #F77F00 !important;
-    font-weight: bold !important;
-    font-family: "Open Sans" !important;
-    font-size: 1.3rem;
+.bs-claim-dashboard-container {
+	position: absolute;
+	width: 100%;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
 }
 
-.bs-claim-btn-yellow{
-    text-align: center;
-    background: #FCBF49 !important;
-    font-weight: bold !important;
-    font-family: "Open Sans" !important;
-    font-size: 1.3rem;
+.bs-claim-dashboard-heading {
+	color: #003049;
 }
 
-.bs-claim-bg-yellow{
-    background: #efcb3a;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+.bs-claim-dashboard-sub-heading {
+	color: #6D1009;
+	font-weight: 600;
+}
+
+.bs-claim-btn-orange {
+	text-align: center;
+	background: #F77F00 !important;
+	font-weight: bold !important;
+	font-family: "Open Sans" !important;
+	font-size: 1.3rem;
+}
+
+.bs-claim-btn-yellow {
+	text-align: center;
+	background: #FCBF49 !important;
+	font-weight: bold !important;
+	font-family: "Open Sans" !important;
+	font-size: 1.3rem;
+}
+
+.bs-claim-bg-yellow {
+	background: #efcb3a;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
 }
 
 
 
-.bs-claim-circle-bg{
-    display: inline-block;
-    background: #EAE2B7;
-    padding: 1rem;
-    border-radius: 100px !important;
-    margin: 15px;
+.bs-claim-circle-bg {
+	display: inline-block;
+	background: #EAE2B7;
+	padding: 1rem;
+	border-radius: 100px !important;
+	margin: 15px;
 }
 
-.bs-claim-img{
-    height: 4rem;
-    width: 4rem;
+.bs-claim-img {
+	height: 4rem;
+	width: 4rem;
 }
 
-.bs-claim-card{
-    border-radius: 50px !important;
+.bs-claim-card {
+	border-radius: 50px !important;
 }
 
-.bs-claim-card-img-top{
-    height: 17rem;
-    width: 100%;
+.bs-claim-card-img-top {
+	height: 17rem;
+	width: 100%;
 }
 
-.bs-claim-card-body{
-    background: #003049;
-    color: white
+.bs-claim-card-body {
+	background: #003049;
+	color: white
 }
 
-.bs-claim-wit-bg{
-    background: #6D1009;
+.bs-claim-wit-bg {
+	background: #6D1009;
 }
 
-.bs-claim-wit-color{
-    color: #6D1009;
+.bs-claim-wit-color {
+	color: #6D1009;
 }
 
-.bs-claim-wit-bg h4{
-    color: white;
+.bs-claim-wit-bg h4 {
+	color: white;
 }
 
 
@@ -114,20 +134,24 @@
 
 
 $number-of-options: 5;
+
 #form-wrapper {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
+
 form {
 	width: 90%;
 	max-width: 500px;
+
 	#form-title {
 		margin-top: 0;
 		font-weight: 400;
 		text-align: center;
 	}
+
 	#debt-amount-slider {
 		display: flex;
 		flex-direction: row;
@@ -135,7 +159,8 @@ form {
 		position: relative;
 		width: 100%;
 		height: 50px;
-		user-select: none;
+		user-select: none !important;
+
 		&::before {
 			content: " ";
 			position: absolute;
@@ -147,18 +172,22 @@ form {
 			transform: translate(-50%, -50%);
 			background: #6D1009;
 		}
-		input, label {
+
+		input,
+		label {
 			box-sizing: border-box;
 			flex: 1;
-			user-select: none;
+			user-select: none !important;
 			cursor: pointer;
 		}
+
 		label {
 			display: inline-block;
 			position: relative;
 			width: 20%;
 			height: 100%;
-			user-select: none;
+			user-select: none !important;
+
 			&::before {
 				content: attr(data-debt-amount);
 				position: absolute;
@@ -172,6 +201,7 @@ form {
 				opacity: 0.85;
 				transition: all 0.15s ease-in-out;
 			}
+
 			&::after {
 				content: " ";
 				position: absolute;
@@ -184,36 +214,43 @@ form {
 				background: #FCBF49;
 				border-radius: 50%;
 				pointer-events: none;
-				user-select: none;
+				user-select: none !important;
 				z-index: 1;
 				cursor: pointer;
 				transition: all 0.15s ease-in-out;
 			}
+
 			&:hover::after {
 				transform: translate(-50%, -50%) scale(1.25);
 			}
 		}
+
 		input {
 			display: none;
+
 			&:checked {
-				+ label::before {
+				+label::before {
 					font-weight: 800;
 					opacity: 1;
 				}
-				+ label::after {
+
+				+label::after {
 					border-width: 4px;
 					transform: translate(-50%, -50%) scale(0.75);
 				}
-				~ #debt-amount-pos {
+
+				~#debt-amount-pos {
 					opacity: 1;
 				}
+
 				@for $i from 1 through $number-of-options {
-					&:nth-child(#{$i * 2 - 1}) ~ #debt-amount-pos {
+					&:nth-child(#{$i * 2 - 1})~#debt-amount-pos {
 						left: #{($i * 20%) - 10%};
 					}
 				}
 			}
 		}
+
 		#debt-amount-pos {
 			display: block;
 			position: absolute;
@@ -229,21 +266,24 @@ form {
 			z-index: 2;
 		}
 	}
+
 	&:valid {
 		#debt-amount-slider {
 			input {
-				+ label::before {
+				+label::before {
 					transform: translate(-50%, 45px) scale(0.9);
 					transition: all 0.15s linear;
 				}
-				&:checked + label::before {
+
+				&:checked+label::before {
 					transform: translate(-50%, 45px) scale(1.1);
 					transition: all 0.15s linear;
 				}
 			}
 		}
 	}
-	& + button {
+
+	&+button {
 		display: block;
 		position: relative;
 		margin: 56px auto 0;
@@ -258,27 +298,32 @@ form {
 		color: #6D1009;
 		border-radius: 8px;
 		outline: 0;
-		user-select: none;
+		user-select: none !important;
 		cursor: pointer;
+
 		&:hover {
 			// transform: scale(1.1);
 			background: #FCBF49;
 			color: #6D1009;
 			border-color: #6D1009;
+
 			&:active {
 				transform: scale(0.9);
 			}
 		}
+
 		&:focus {
 			background: #FCBF49;
 			border-color: #FCBF49;
 			color: #6D1009;
 			pointer-events: none;
 			border-color: #6D1009;
+
 			&::before {
 				animation: spin 1s linear infinite;
 			}
 		}
+
 		// &::before {
 		// 	display: inline-block;
 		// 	width: 0;
@@ -290,11 +335,13 @@ form {
 		// 	transform: rotate(0deg);
 		// }
 	}
-	&:invalid + button {
+
+	&:invalid+button {
 		pointer-events: none;
 		opacity: 0.25;
 	}
 }
+
 @keyframes spin {
 	from {
 		transform: rotate(0deg);
@@ -302,6 +349,7 @@ form {
 		opacity: 1;
 		margin-right: 12px;
 	}
+
 	to {
 		transform: rotate(360deg);
 		width: 24px;
@@ -310,85 +358,87 @@ form {
 	}
 }
 
-.textAlignCenterVerticalHorizontical{
+.textAlignCenterVerticalHorizontical {
 	position: absolute;
-    top: 50%;
+	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
 
 .claimBtn {
-    display: block;
-    position: relative;
-    margin: 20px auto 0 !important;
-    padding: 10px 20px !important;
-    // appearance: none;
-    transition: all 0.15s ease-in-out;
-    font-family: inherit;
-    font-size: 18px !important;
-    font-weight: 600 !important;
-    border: 2px solid #6D1009 !important;
-    color: #6D1009 !important;
-    border-radius: 8px !important;
-    outline: 0 !important;
-    // cursor: pointer;
-    text-transform: capitalize !important;
-    &:hover {
-        // transform: scale(1.1);
-        background: #FCBF49 !important;
-        color: #6D1009;
-        border-color: #6D1009;
-    }
-    &:focus {
-        background: #FCBF49;
-        border-color: #FCBF49;
-        color: #6D1009;
-        border-color: #6D1009;
-    }
+	display: block;
+	position: relative;
+	margin: 20px auto 0 !important;
+	padding: 10px 20px !important;
+	// appearance: none;
+	transition: all 0.15s ease-in-out;
+	font-family: inherit;
+	font-size: 18px !important;
+	font-weight: 600 !important;
+	border: 2px solid #6D1009 !important;
+	color: #6D1009 !important;
+	border-radius: 8px !important;
+	outline: 0 !important;
+	// cursor: pointer;
+	text-transform: capitalize !important;
+
+	&:hover {
+		// transform: scale(1.1);
+		background: #FCBF49 !important;
+		color: #6D1009;
+		border-color: #6D1009;
+	}
+
+	&:focus {
+		background: #FCBF49;
+		border-color: #FCBF49;
+		color: #6D1009;
+		border-color: #6D1009;
+	}
 }
 
-.text-input{
-  
+.text-input {
+
 	position: relative;
 	margin-top: 50px;
-	
-	input[type="number"]{
-	  display: inline-block;
-	  width: 500px;
-	  height: 40px;
-	  box-sizing: border-box;
-	  outline: none;
-	  border: 1px solid lightgray;
-	  border-radius: 3px;
-	  padding: 10px 10px 10px 60px;
-	  transition: all 0.1s ease-out;
+
+	input[type="number"] {
+		display: inline-block;
+		width: 500px;
+		height: 40px;
+		box-sizing: border-box;
+		outline: none;
+		border: 1px solid lightgray;
+		border-radius: 3px;
+		padding: 10px 10px 10px 60px;
+		transition: all 0.1s ease-out;
 	}
-	
-	input[type="number"] + label{
-	  position: absolute;
-	  top: 0;
-	  left: 0;
-	  bottom: 0;
-	  height: 40px;
-	  line-height: 40px;
-	  color: white;
-	  border-radius: 3px 0 0 3px;
-	  padding: 0 20px;
-	  background: #6D1009;
-	  transform: translateZ(0) translateX(0);
-	  transition: all 0.3s ease-in;
-	  transition-delay: 0.2s;
+
+	input[type="number"]+label {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		height: 40px;
+		line-height: 40px;
+		color: white;
+		border-radius: 3px 0 0 3px;
+		padding: 0 20px;
+		background: #6D1009;
+		transform: translateZ(0) translateX(0);
+		transition: all 0.3s ease-in;
+		transition-delay: 0.2s;
 	}
-	
-	input[type="number"]:focus + label{
-	  transform: translateX(-120%) translateY(0%);
-	  border-radius: 3px;
-	  transition: all 0.1s ease-out;
+
+	input[type="number"]:focus+label {
+		transform: translateX(-120%) translateY(0%);
+		border-radius: 3px;
+		transition: all 0.1s ease-out;
 	}
-	
-	input[type="number"]:focus{
-	  padding: 10px;
-	  transition: all 0.3s ease-out;
-	  transition-delay: 0.2s;
+
+	input[type="number"]:focus {
+		padding: 10px;
+		transition: all 0.3s ease-out;
+		transition-delay: 0.2s;
 	}
-  }
+}

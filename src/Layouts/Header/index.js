@@ -5,11 +5,14 @@ import { toast } from 'react-toastify';
 import IconButton from '@mui/material/IconButton';
 import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
-import { useEffect, useState } from "react";
+
+import { useSelector, useDispatch } from "react-redux";
+import { setWalletAddress, clearWalletAddress } from "../../Actions/index";
 
 function HeaderComp(props) {
-    const { setUserWalletAddress, userWalletAddress } = props;
-    const [walletAddress, setWalletAddress] = useState("");
+    
+    const stateWalletAddress = useSelector((state) => state.updateWalletAddress);
+    const dispatch = useDispatch();
     const path = window.location.pathname;
 
     const connectWallet = () => {
@@ -18,8 +21,7 @@ function HeaderComp(props) {
                 .then(res => {
                     // Return the address of the wallet
                     toast.success("Wallet Connect");
-                    setUserWalletAddress(res[0]);
-                    setWalletAddress(res[0]);
+                    dispatch(setWalletAddress(res[0]));
                     localStorage.setItem("cn-user-wallet-address", res);
                 })
         } else {
@@ -28,18 +30,8 @@ function HeaderComp(props) {
     }
 
     const logout = async () => {
-        localStorage.removeItem("cn-user-wallet-address");
-        setWalletAddress("");
-        setUserWalletAddress("");
+        dispatch(clearWalletAddress(""));
     }
-
-    useEffect(() => {
-        if (localStorage.getItem("cn-user-wallet-address") != null || userWalletAddress) {
-            setWalletAddress(localStorage.getItem("cn-user-wallet-address"));
-        } else {
-            setWalletAddress("")
-        }
-    }, []);
 
     return (
         <>
@@ -77,7 +69,7 @@ function HeaderComp(props) {
                             {
                                 path === "/claim" &&
                                 (
-                                    walletAddress === "" || userWalletAddress === "" ?
+                                    stateWalletAddress === "" ?
                                         <>
                                             <span className="navbar-text">
                                                 <IconButton aria-label="delete" size="large" onClick={() => connectWallet()}>
@@ -90,7 +82,7 @@ function HeaderComp(props) {
                                             <span className="navbar-text">
                                                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                                     <li className="nav-item text-marum-color fs-5" style={{marginTop : "11px", marginBottom : "11px"}}>
-                                                            { walletAddress.slice(0, 7) + "..." + walletAddress.slice(walletAddress.length-5, walletAddress.length) }
+                                                            { stateWalletAddress.slice(0, 7) + "..." + stateWalletAddress.slice(stateWalletAddress.length-5, stateWalletAddress.length) }
                                                     </li>
                                                     <li className="nav-item">
                                                         <IconButton aria-label="delete" size="large" onClick={() => logout()}>

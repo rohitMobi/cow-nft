@@ -9,11 +9,16 @@ import "./style.scss";
 import { useEffect, useState } from "react";
 import Button from '@mui/material/Button';
 
+import { useSelector, useDispatch } from "react-redux";
+import { setWalletAddress } from "../../Actions/index";
+
 function ClaimComp() {
 
     { document.title = "COW NFT | Claim" }
-
-    const [userWalletAddress, setUserWalletAddress] = useState("");
+    
+    const stateWalletAddress = useSelector((state) => state.updateWalletAddress);
+    const dispatch = useDispatch();
+    
     const [slot, setSlot] = useState(false);
     const [slot1, setSlot1] = useState(false);
     const [slot2, setSlot2] = useState(false);
@@ -30,7 +35,7 @@ function ClaimComp() {
                 .then(res => {
                     // Return the address of the wallet
                     toast.success("Wallet Connect");
-                    setUserWalletAddress(res[0]);
+                    dispatch(setWalletAddress(res[0]));
                     localStorage.setItem("cn-user-wallet-address", res);
                 })
         } else {
@@ -65,18 +70,9 @@ function ClaimComp() {
         }
     }
 
-    useEffect(() => {
-        if (localStorage.getItem("cn-user-wallet-address") != null) {
-            setUserWalletAddress(localStorage.getItem("cn-user-wallet-address"));
-        } else {
-            setUserWalletAddress("")
-        }
-        checkSlotAvailable();
-    }, []);
-
     return (
         <>
-            <HeaderComp setUserWalletAddress={setUserWalletAddress} userWalletAddress={userWalletAddress} />
+            <HeaderComp />
             <div className="bs-claim-main-section">
                 <img src={SideUIDesign} className="bs-claim-left-img" alt="" />
                 <img src={SideUIDesign} className="bs-claim-right-img" alt="" />
@@ -99,7 +95,7 @@ function ClaimComp() {
                         <div className="row mb-5">
                             <div className="col-lg-12">
                                 {
-                                    userWalletAddress === "" ?
+                                    stateWalletAddress === "" ?
                                         <button onClick={() => connectWallet()} className="btn px-5 bs-btn-orange"><i>Connect Wallet</i></button>
                                         :
                                         <>
